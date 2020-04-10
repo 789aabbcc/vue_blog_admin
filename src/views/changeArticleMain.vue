@@ -5,7 +5,9 @@
     <div class="dsc">{{this.data.dsc}}</div>
     <div class="date">
       更新时间 :
-      <i>{{this.data.updateAt}}</i>
+      <i>{{this.data.updateAt}}</i> /
+      字数 :
+      <span>{{this.data.numberSize}}</span>
     </div>
     <mavon-editor
       :placeholder="'未编辑内容...卤蛋正在努力创作中'"
@@ -15,7 +17,7 @@
       style="color:beige;width:90%;margin:0 auto"
       code-style="atelier-plateau-light"
       @save="save"
-      @imgAdd="$imgAdd"
+      @change="change"
     ></mavon-editor>
   </div>
 </template>
@@ -55,6 +57,9 @@ export default {
         .catch(res => {
           this.$message.error("服务器开小差了！");
         });
+    },
+    change(value, values) {
+      this.data.numberSize = value.length;
     }
   }
 };
@@ -84,5 +89,8 @@ export default {
 
 .date i {
   color: rgba(81, 250, 75, 0.719);
+}
+.date span {
+  color: rgb(250, 253, 44);
 }
 </style>

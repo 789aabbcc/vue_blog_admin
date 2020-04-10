@@ -160,3 +160,12 @@ export const adminChangeArticlesMain = (query) => {
         data: query
     })
 }
+
+// 新增文章
+export const addArticles = (query) => {
+    return request({
+        url: '/addArticles',
+        method: 'post',
+        data: query
+    })
+}
