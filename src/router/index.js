@@ -105,6 +105,13 @@ const router = new Router({
       ]
     },
     {
+      path: '/changeArticleMain',
+      component: resolve => require(['@/views/changeArticleMain.vue'], resolve),
+      meta: {
+        title: '修改文章详情'
+      }
+    },
+    {
       path: '*',
       component: resolve => require(['@/views/404.vue'], resolve),
       meta: {

@@ -91,3 +91,72 @@ export const addTypes = (query) => {
         data: query
     })
 }
+
+
+// 获取所有标签
+export const getAllTypes = () => {
+    return request({
+        url: '/getAllTypes',
+        method: 'get'
+    })
+}
+// 获取文章总数
+export const getArticlesCount = () => {
+    return request({
+        url: '/getArticlesCount',
+        method: 'get'
+    })
+}
+// 获取文章
+export const getArticles = (query) => {
+    return request({
+        url: '/getArticles',
+        method: 'post',
+        data: query
+    })
+}
+
+// 搜索文章
+export const findArticles = (query) => {
+    return request({
+        url: '/findArticles',
+        method: 'post',
+        data: query
+    })
+}
+
+// 修改文章基本内容
+export const changeArticles = (query) => {
+    return request({
+        url: '/changeArticles',
+        method: 'post',
+        data: query
+    })
+}
+
+// 修改文章基本内容
+export const deleteArticles = (query) => {
+    return request({
+        url: '/deleteArticles',
+        method: 'post',
+        data: query
+    })
+}
+
+// 获取某个文章主要内容
+export const adminGetArticlesMain = (query) => {
+    return request({
+        url: '/adminGetArticlesMain',
+        method: 'get',
+        params: query
+    })
+}
+
+// 更新某个文章主要内容
+export const adminChangeArticlesMain = (query) => {
+    return request({
+        url: '/adminChangeArticlesMain',
+        method: 'post',
+        data: query
+    })
+}

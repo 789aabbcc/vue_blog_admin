@@ -1,4 +1,4 @@
-# vue-template
+# vue-blog-admin
 
 ## 项目初始化
 ```
