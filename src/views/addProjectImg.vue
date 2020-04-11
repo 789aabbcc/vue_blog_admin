@@ -1,6 +1,12 @@
 <!-- 新增项目图集 -->
 <template>
   <div>
+    <!-- 头部面包屑 -->
+    <el-breadcrumb separator-class="el-icon-arrow-right" style="padding-bottom:20px">
+      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item>项目列表</el-breadcrumb-item>
+      <el-breadcrumb-item>新增项目图集</el-breadcrumb-item>
+    </el-breadcrumb>
     <div style="width:60%;margin:0 auto;">
       <el-form ref="form" :model="form">
         <el-form-item label="封面">

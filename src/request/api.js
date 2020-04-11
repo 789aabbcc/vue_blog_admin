@@ -223,3 +223,45 @@ export const addProjects = (query) => {
         data: query
     })
 }
+
+// 获取时光轴列表
+export const getTimeline = (query) => {
+    return request({
+        url: '/getTimeline',
+        method: 'get',
+        params: query
+    })
+}
+
+// 获取时光轴内容总数
+export const getTimeLineTotal = (query) => {
+    return request({
+        url: '/getTimeLineTotal',
+        method: 'get',
+        params: query
+    })
+}
+// 修改时光轴列表
+export const changeTimeLine = (query) => {
+    return request({
+        url: '/changeTimeLine',
+        method: 'post',
+        data: query
+    })
+}
+// 增加时光轴列表
+export const addTimeLine = (query) => {
+    return request({
+        url: '/addTimeLine',
+        method: 'post',
+        data: query
+    })
+}
+// 删除时光轴列表
+export const deleteTimeLine = (query) => {
+    return request({
+        url: '/deleteTimeLine',
+        method: 'post',
+        data: query
+    })
+}
