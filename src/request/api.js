@@ -265,3 +265,11 @@ export const deleteTimeLine = (query) => {
         data: query
     })
 }
+
+// 获取喜欢粉丝
+export const getLikesFans = () => {
+    return request({
+        url: '/getLikesFans',
+        method: 'get'
+    })
+}
