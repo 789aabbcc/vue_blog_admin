@@ -110,6 +110,12 @@ const router = new Router({
       meta: {
         title: '修改文章详情'
       }
+    }, {
+      path: '/projectMain',
+      component: resolve => require(['@/views/projectMain.vue'], resolve),
+      meta: {
+        title: '修改项目详情'
+      }
     },
     {
       path: '*',

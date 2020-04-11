@@ -1,0 +1,96 @@
+<!-- 项目详情 -->
+<template>
+  <div>
+    <div class="title">{{this.data.name}}</div>
+    <div class="dsc">{{this.data.content}}</div>
+    <div class="date">
+      更新时间 :
+      <i>{{this.data.updateAt}}</i> /
+      字数 :
+      <span>{{this.data.numberSize}}</span>
+    </div>
+    <mavon-editor
+      :placeholder="'未编辑内容...卤蛋正在努力创作中'"
+      v-model="this.data.main"
+      :previewBackground="'#424242'"
+      :boxShadowStyle="'1px 1px 1px  rgba(255,255,255,0.2)'"
+      style="color:beige;width:90%;margin:0 auto"
+      code-style="atelier-plateau-light"
+      @save="save"
+      @change="change"
+    ></mavon-editor>
+  </div>
+</template>
+
+<script>
+import { getProjectsMain, adminChangeProjectsMain } from "../request/api";
+
+export default {
+  data() {
+    return { data: [] };
+  },
+
+  components: {},
+
+  computed: {},
+
+  mounted() {
+    let projectId = this.$route.query.projectId;
+    getProjectsMain({ projectId: projectId })
+      .then(res => {
+        this.data = res.result[0];
+      })
+      .catch(res => {});
+  },
+
+  methods: {
+    //   保存
+    save(value, values) {
+      adminChangeProjectsMain({
+        projectId: this.data.projectId,
+        main: value
+      })
+        .then(res => {
+          this.$message.success("更新成功！");
+          this.data.updateAt = res.updateAt;
+        })
+        .catch(res => {
+          this.$message.error("服务器开小差了！");
+        });
+    },
+    change(value, values) {
+      this.data.numberSize = value.length;
+    }
+  }
+};
+</script>
+<style scoped>
+.title {
+  font-size: 30px;
+  color: bisque;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dsc {
+  font-size: 20px;
+  color: #999;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.date {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.date i {
+  color: rgba(81, 250, 75, 0.719);
+}
+.date span {
+  color: rgb(250, 253, 44);
+}
+</style>

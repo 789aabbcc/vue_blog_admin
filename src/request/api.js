@@ -169,3 +169,57 @@ export const addArticles = (query) => {
         data: query
     })
 }
+
+// 获取项目/图集列表
+export const getProjects = (query) => {
+    return request({
+        url: '/getProjects',
+        method: 'get',
+        params: query
+    })
+}
+
+
+// 获取项目详情
+export const getProjectsMain = (query) => {
+    return request({
+        url: '/getProjectsMain',
+        method: 'get',
+        params: query
+    })
+}
+
+// 修改项目详情
+export const adminChangeProjectsMain = (query) => {
+    return request({
+        url: '/adminChangeProjectsMain',
+        method: 'post',
+        data: query
+    })
+}
+
+// 修改项目基本信息
+export const changeProjects = (query) => {
+    return request({
+        url: '/changeProjects',
+        method: 'post',
+        data: query
+    })
+}
+// 删除项目
+export const deleteProjects = (query) => {
+    return request({
+        url: '/deleteProjects',
+        method: 'post',
+        data: query
+    })
+}
+
+// 增加项目图集
+export const addProjects = (query) => {
+    return request({
+        url: '/addProjects',
+        method: 'post',
+        data: query
+    })
+}

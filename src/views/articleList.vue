@@ -22,6 +22,7 @@
         <el-button slot="append" icon="el-icon-search" @click="findArticle"></el-button>
       </el-input>
     </div>
+
     <!-- 表单区Start -->
     <el-table ref="singleTable" :data="tableData" style="width: 100%">
       <el-table-column align="center" type="index"></el-table-column>
@@ -61,7 +62,7 @@
       <el-table-column align="center" property="numberSize" label="字数" width="80"></el-table-column>
       <el-table-column align="center" property="likes" label="喜欢数" width="80"></el-table-column>
       <el-table-column align="center" property="see" label="浏览量" width="80"></el-table-column>
-      <el-table-column align="center" property="dsc" label="描述" min-width="200"></el-table-column>
+      <el-table-column align="center" property="dsc" label="描述" width="200"></el-table-column>
       <el-table-column align="center" label="操作" fixed="right" width="220">
         <template slot-scope="scope">
           <router-link
