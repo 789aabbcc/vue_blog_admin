@@ -149,7 +149,7 @@ export default {
       .then(res => {
         this.form = res.result;
         this.total = res.count.count;
-        this.img = res.result[0].main.split(",");
+        this.img = res.result.main.split(",");
       })
       .catch(res => {});
   },
@@ -158,14 +158,15 @@ export default {
     // 弹出编辑框
     handleEdit(index, row) {
       this.id = row.projectId;
-
+      this.img = row.main.split(",");
       this.formChange = {
         projectId: row.projectId,
         name: row.name,
         times: row.times,
         cover: row.cover,
         content: row.content,
-        updateAt: row.updateAt
+        updateAt: row.updateAt,
+        main: row.main
       };
 
       this.editVisible = true;

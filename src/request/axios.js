@@ -5,7 +5,7 @@ import axios from 'axios';
 // 使用自定义配置新建一个 axios 实例
 const service = axios.create({
     // 基础的请求地址
-    baseURL: 'http://127.0.0.1:3001',
+    baseURL: 'http://127.0.0.1:1024',
     // 设置超时时间 5s
     timeout: 5000
 });
