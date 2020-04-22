@@ -48,7 +48,7 @@ export default {
     save(value, values) {
       adminChangeArticlesMain({
         articleId: this.data.articleId,
-        content: value
+        content: `${value}`
       })
         .then(res => {
           this.$message.success("更新成功！");

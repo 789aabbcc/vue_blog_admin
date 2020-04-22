@@ -1,7 +1,6 @@
 html, body, #app, .wrapper {
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 * {
@@ -11,7 +10,6 @@ html, body, #app, .wrapper {
 
 body {
     background-color: #3c3c3c;
-    overflow: hidden;
 }
 
 i {
