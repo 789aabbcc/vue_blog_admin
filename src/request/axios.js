@@ -8,7 +8,7 @@ const service = axios.create({
     // baseURL: 'http://118.31.55.53:3000',
     baseURL: 'http://127.0.0.1:1024',
     // 设置超时时间 5s
-    timeout: 5000
+    timeout: 10000
 });
 
 
