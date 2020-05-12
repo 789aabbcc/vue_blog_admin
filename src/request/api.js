@@ -273,3 +273,11 @@ export const getLikesFans = () => {
         method: 'get'
     })
 }
+
+// 更新首页内容
+export const updateData = () => {
+    return request({
+        url: '/updateData',
+        method: 'post'
+    })
+}
